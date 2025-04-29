@@ -6,7 +6,7 @@ This repository demonstrates a CI/CD pipeline for building and delivering a Dock
 
 - **Build Automation**: Uses Gradle to build a Java application.
 - **Docker Image Creation**: Builds a Docker image containing the Java application.
-- **Continuous Integration**: Automatically builds the project and runs tests on every push or pull request to the `master` branch.
+- **Continuous Integration**: Automatically builds the project and runs tests on every push or pull request to the `main` branch.
 - **Continuous Deployment**: Pushes the Docker image to a private Docker repository.
 
 ## Prerequisites
@@ -14,8 +14,8 @@ This repository demonstrates a CI/CD pipeline for building and delivering a Dock
 1. **Java Development Kit (JDK)**: Ensure JDK 1.8 or higher is installed.
 2. **Docker**: Install Docker to build and run the Docker image locally.
 3. **GitHub Secrets**: Add the following secrets to your GitHub repository:
-   - `DOCKER_USERNAME`: Your Docker Hub username.
-   - `DOCKER_PASSWORD`: Your Docker Hub password.
+    - `DOCKER_USERNAME`: Your Docker Hub username.
+    - `DOCKER_PASSWORD`: Your Docker Hub password.
 
 ## Project Structure
 
@@ -27,7 +27,7 @@ This repository demonstrates a CI/CD pipeline for building and delivering a Dock
 
 ## Workflow Overview
 
-The GitHub Actions workflow is defined in the `settings.gradle` file. It performs the following steps:
+The GitHub Actions workflow is defined in the `.github/workflows/gradle.yml` file. It performs the following steps:
 
 1. **Checkout Code**: Clones the repository.
 2. **Set Up JDK**: Configures JDK 1.8 for the build process.
@@ -38,16 +38,19 @@ The GitHub Actions workflow is defined in the `settings.gradle` file. It perform
 ## Running Locally
 
 1. Build the Java application:
-   ```sh
-   ./gradlew build
+    ```sh
+    ./gradlew build
+    ```
 
 2. Build the Docker image:
     ```sh
     docker build -t your-image-name .
+    ```
 
 3. Run the Docker container:
     ```sh
     docker run -p 8080:8080 your-image-name
+    ```
 
 ## License
 
