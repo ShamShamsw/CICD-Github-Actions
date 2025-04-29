@@ -42,10 +42,12 @@ The GitHub Actions workflow is defined in the `settings.gradle` file. It perform
    ./gradlew build
 
 2. Build the Docker image:
-docker build -t your-image-name .
+    ```sh
+    docker build -t your-image-name .
 
 3. Run the Docker container:
-docker run -p 8080:8080 your-image-name
+    ```sh
+    docker run -p 8080:8080 your-image-name
 
 ## License
 
